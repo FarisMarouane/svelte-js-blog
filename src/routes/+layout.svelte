@@ -1,4 +1,5 @@
 <script>
+	import '@fontsource/merriweather'; // Defaults to weight 400.
 	import BlogHeader from '../components/BlogHeader.svelte';
 	import '../global.css';
 </script>
@@ -10,6 +11,11 @@
 
 <style>
 	.layout {
+		font-family: 'Merriweather';
+		font-weight: 400;
+		word-wrap: break-word;
+		font-kerning: normal;
+
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
