@@ -1,4 +1,6 @@
 <script>
+	import '@fontsource/montserrat/900.css';
+
 	export let title;
 	export let publicationDate;
 	export let readingTime;
@@ -20,6 +22,9 @@
 
 <style>
 	.title {
+		font-family: 'Montserrat';
+		font-weight: 900;
+
 		font-size: 1.75rem;
 		margin-bottom: 0.5rem;
 	}
