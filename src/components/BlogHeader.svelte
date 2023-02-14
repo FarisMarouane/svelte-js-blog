@@ -4,6 +4,7 @@ const { pathname } = useRouter();
 const { theme, setTheme } = useContext(ThemeContext); -->
 <script>
 	import { page } from '$app/stores';
+	import '@fontsource/montserrat/900.css';
 
 	export let title;
 
@@ -55,6 +56,9 @@ import ToggleInput from './Toggle'; -->
 
 <style>
 	.header {
+		font-family: 'Montserrat';
+		font-weight: 900;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

@@ -25,6 +25,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/merriweather": "^4.5.14",
+		"@fontsource/montserrat": "^4.5.14",
 		"dayjs": "^1.11.7",
 		"gray-matter": "^4.0.3",
 		"reading-time": "^1.5.0",
