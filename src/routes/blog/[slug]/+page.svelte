@@ -1,5 +1,6 @@
 <script>
 	import dayjs from 'dayjs';
+	import '@fontsource/montserrat/900.css';
 
 	export let data;
 	const { id: currentArticleId } = data.frontmatter;
@@ -48,7 +49,7 @@
 <main>
 	<article>
 		<header>
-			<h1 class={'/* font.className */'}>{data.frontmatter.title}</h1>
+			<h1 class="title">{data.frontmatter.title}</h1>
 			<small class="small">
 				{dayjs(data.frontmatter.publicationDate).format('MMMM D, YYYY')}
 				&nbsp;&bull;&nbsp;
@@ -63,6 +64,11 @@
 
 <!-- <ArticleNavigation {currentArticleId} {articlesLinks} /> -->
 <style>
+	.title {
+		font-family: 'Montserrat';
+		font-weight: 900;
+	}
+
 	.small {
 		font-size: 0.8rem;
 		line-height: 1.75rem;
