@@ -21,11 +21,11 @@
 	<link rel="icon" href="/favicon.png" type="image/png" />
 	<link rel="manifest" href="/manifest.json" />
 </svelte:head>
+
 <Aside />
 <main>
-	{#each allArticlesMetaData as articleMetaData}
+	{#each allArticlesMetaData as articleMetaData (articleMetaData.id)}
 		<ArticlePreview
-			key={articleMetaData.id}
 			title={articleMetaData.title}
 			readingTime={articleMetaData.readingTime}
 			publicationDate={articleMetaData.date}
