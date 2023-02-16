@@ -1,9 +1,12 @@
 <script>
+	export let onToggle;
+
 	let checked = false;
 	let focused = false;
 
 	const onClick = () => {
 		checked = !checked;
+		onToggle();
 	};
 
 	const onFocus = () => {
@@ -15,9 +18,9 @@
 	};
 
 	const onKeyup = (e) => {
-		console.log(e);
 		if (e.key == ' ' || e.code == 'Space' || e.keyCode == 32) {
 			checked = !checked;
+			onToggle();
 		}
 	};
 </script>

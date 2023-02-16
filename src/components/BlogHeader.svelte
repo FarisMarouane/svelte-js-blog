@@ -1,38 +1,24 @@
-<!-- const font = Montserrat({ subsets: ['latin'], weight: '900' });
-
-const { pathname } = useRouter();
-const { theme, setTheme } = useContext(ThemeContext); -->
 <script>
 	import { page } from '$app/stores';
 	import '@fontsource/montserrat/900.css';
+	import Toggle from './Toggle.svelte';
 
 	export let title;
 
-	// const toggleDarkMode = () => {
-	//   const bodyElement = document.querySelector('body');
+	const toggleDarkMode = () => {
+		const bodyElement = document.querySelector('body');
 
-	//   if (bodyElement) {
-	//     const classList = bodyElement.classList;
+		if (bodyElement) {
+			const classList = bodyElement.classList;
 
-	//     if (classList.contains('dark')) {
-	//       classList.remove('dark');
-	//       setTheme('light');
-	//     } else {
-	//       classList.add('dark');
-	//       setTheme('dark');
-	//     }
-	//   }
-	// };
+			if (classList.contains('dark')) {
+				classList.remove('dark');
+			} else {
+				classList.add('dark');
+			}
+		}
+	};
 </script>
-
-<!-- import { useRouter } from 'next/router';
-import { useContext, Context } from 'react';
-import { ThemeContext, ThemeContextType, ThemeType } from './ContextProvider';
-import styles from '../styles/components/Header.module.css';
-import Link from 'next/link';
-
-import { Montserrat } from '@next/font/google';
-import ToggleInput from './Toggle'; -->
 
 <header class="header">
 	{#if $page.url.pathname === '/'}
@@ -48,10 +34,7 @@ import ToggleInput from './Toggle'; -->
 			</a>
 		</h3>
 	{/if}
-	<!-- <ToggleInput
-        checked={theme === 'dark' ? true : false}
-        onChange={toggleDarkMode}
-      /> -->
+	<Toggle onToggle={toggleDarkMode} />
 </header>
 
 <style>
