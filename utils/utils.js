@@ -24,10 +24,10 @@ export function getArticleFromSlug(slug) {
 }
 
 export function getAllArticlesMetadata() {
-	const articles = fs.readdirSync(path.join(process.cwd(), 'data/blog'));
+	const articles = fs.readdirSync(articlesPath);
 
 	return articles.reduce((allArticlesMetadata, currentArticle) => {
-		const source = fs.readFileSync(path.join(process.cwd(), 'data/blog', currentArticle), 'utf-8');
+		const source = fs.readFileSync(path.join(articlesPath, currentArticle), 'utf-8');
 		const { data } = matter(source);
 
 		return [
