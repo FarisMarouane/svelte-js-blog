@@ -4,6 +4,7 @@
 	import Toggle from './Toggle.svelte';
 
 	export let title;
+	export let darkMode;
 
 	const toggleDarkMode = () => {
 		const bodyElement = document.querySelector('body');
@@ -34,7 +35,7 @@
 			</a>
 		</h3>
 	{/if}
-	<Toggle onToggle={toggleDarkMode} />
+	<Toggle {darkMode} onToggle={toggleDarkMode} />
 </header>
 
 <style>

@@ -1,11 +1,22 @@
 <script>
+	import { onMount } from 'svelte';
 	import '@fontsource/merriweather'; // Defaults to weight 400.
 	import BlogHeader from '../components/BlogHeader.svelte';
 	import '../global.css';
+
+	let darkMode = false;
+
+	onMount(() => {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			darkMode = true;
+			const bodyElement = document.querySelector('body');
+			bodyElement && bodyElement.classList.add('dark');
+		}
+	});
 </script>
 
 <div class="layout">
-	<BlogHeader title="Marouane Faris" />
+	<BlogHeader {darkMode} title="Marouane Faris" />
 	<slot />
 </div>
 
