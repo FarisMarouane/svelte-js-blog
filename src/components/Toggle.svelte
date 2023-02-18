@@ -1,6 +1,7 @@
 <script>
 	export let onToggle;
 	export let darkMode;
+	export let toggleId;
 
 	let checked = false;
 	let focused = false;
@@ -44,12 +45,15 @@
 		</div>
 	</div>
 	<div class="thumb" />
+	<label class="toggle-screenreader-only" for={toggleId} />
 	<input
 		tabindex="0"
 		on:focus={onFocus}
 		on:blur={onBlur}
 		class="toggle-screenreader-only"
 		type="checkbox"
+		id={toggleId}
+		name={toggleId}
 	/>
 </div>
 

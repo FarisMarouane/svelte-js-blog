@@ -35,7 +35,7 @@
 			</a>
 		</h3>
 	{/if}
-	<Toggle {darkMode} onToggle={toggleDarkMode} />
+	<Toggle {darkMode} toggleId="dark-mode" onToggle={toggleDarkMode} />
 </header>
 
 <style>
