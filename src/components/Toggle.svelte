@@ -1,8 +1,11 @@
 <script>
 	export let onToggle;
+	export let darkMode;
 
 	let checked = false;
 	let focused = false;
+
+	$: if (darkMode) checked = true;
 
 	const onClick = () => {
 		checked = !checked;
@@ -18,6 +21,7 @@
 	};
 
 	const onKeyup = (e) => {
+		e.preventDefault();
 		if (e.key == ' ' || e.code == 'Space' || e.keyCode == 32) {
 			checked = !checked;
 			onToggle();
@@ -25,13 +29,10 @@
 	};
 </script>
 
-<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <div
 	on:click={onClick}
-	on:focus={onFocus}
-	on:blur={onBlur}
 	on:keyup={onKeyup}
-	tabindex="0"
+	tabindex="-1"
 	class={`toggle ${focused ? 'toggle--focused' : ''} ${checked ? 'toggle--checked' : ''}`}
 >
 	<div class="track">
@@ -43,7 +44,13 @@
 		</div>
 	</div>
 	<div class="thumb" />
-	<input tabindex="-1" class="toggle-screenreader-only" type="checkbox" />
+	<input
+		tabindex="0"
+		on:focus={onFocus}
+		on:blur={onBlur}
+		class="toggle-screenreader-only"
+		type="checkbox"
+	/>
 </div>
 
 <style>
@@ -55,6 +62,11 @@
 		background-color: transparent;
 		border: 0;
 		padding: 0;
+		outline: none;
+	}
+
+	.toggle--focused .thumb {
+		box-shadow: 0 0 2px 3px #ffa7c4;
 	}
 
 	.toggle:focus .thumb {
