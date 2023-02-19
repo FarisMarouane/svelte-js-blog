@@ -6,11 +6,23 @@
 	let checked = false;
 	let focused = false;
 
-	$: if (darkMode) checked = true;
+	let checkbox;
+
+	$: if (darkMode) {
+		checked = true;
+		checkbox.click();
+	}
 
 	const onClick = () => {
 		checked = !checked;
 		onToggle();
+		if (checked) return checkbox.click();
+		if (!checked) return checkbox.click();
+	};
+
+	const onInputClick = (e) => {
+		// Prevent container's click form triggering
+		e.stopPropagation();
 	};
 
 	const onFocus = () => {
@@ -26,6 +38,7 @@
 		if (e.key == ' ' || e.code == 'Space' || e.keyCode == 32) {
 			checked = !checked;
 			onToggle();
+			checkbox.click();
 		}
 	};
 </script>
@@ -33,6 +46,8 @@
 <div
 	on:click={onClick}
 	on:keyup={onKeyup}
+	on:focus={onFocus}
+	on:blur={onBlur}
 	tabindex="-1"
 	class={`toggle ${focused ? 'toggle--focused' : ''} ${checked ? 'toggle--checked' : ''}`}
 >
@@ -47,7 +62,9 @@
 	<div class="thumb" />
 	<label class="toggle-screenreader-only" for={toggleId} />
 	<input
+		bind:this={checkbox}
 		tabindex="0"
+		on:click={onInputClick}
 		on:focus={onFocus}
 		on:blur={onBlur}
 		class="toggle-screenreader-only"
@@ -67,13 +84,11 @@
 		border: 0;
 		padding: 0;
 		outline: none;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	.toggle--focused .thumb {
-		box-shadow: 0 0 2px 3px #ffa7c4;
-	}
-
-	.toggle:focus .thumb {
 		box-shadow: 0 0 2px 3px #ffa7c4;
 	}
 
