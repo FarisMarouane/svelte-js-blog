@@ -4,6 +4,7 @@
 			class="profile_pic"
 			src="/photo_linkedin.jpeg"
 			alt="marouane_faris_profile_pic"
+			loading="lazy"
 			width={56}
 			height={56}
 		/>

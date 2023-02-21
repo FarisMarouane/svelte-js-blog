@@ -53,10 +53,10 @@
 >
 	<div class="track">
 		<div class="unchecked_icon">
-			<img src="/crescent.png" alt="cresent" width={16} height={16} />
+			<img src="/crescent.png" alt="cresent" width={16} height={16} loading="lazy" />
 		</div>
 		<div class="checked_icon">
-			<img src="/sun.png" alt="sun" width={16} height={16} />
+			<img src="/sun.png" alt="sun" width={16} height={16} loading="lazy" />
 		</div>
 	</div>
 	<div class="thumb" />
