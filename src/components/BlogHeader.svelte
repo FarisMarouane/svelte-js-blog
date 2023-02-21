@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import '@fontsource/montserrat/900.css';
 	import Toggle from './Toggle.svelte';
 
 	export let title;

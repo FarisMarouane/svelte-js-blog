@@ -1,6 +1,4 @@
 <script>
-	import '@fontsource/montserrat/900.css';
-
 	export let title;
 	export let publicationDate;
 	export let readingTime;

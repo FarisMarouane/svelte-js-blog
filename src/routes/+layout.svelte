@@ -1,8 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import '@fontsource/merriweather'; // Defaults to weight 400.
 	import BlogHeader from '../components/BlogHeader.svelte';
-	import '../global.css';
 
 	let darkMode = false;
 
@@ -22,8 +20,6 @@
 
 <style>
 	.layout {
-		font-family: 'Merriweather';
-		font-weight: 400;
 		word-wrap: break-word;
 		font-kerning: normal;
 

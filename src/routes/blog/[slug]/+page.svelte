@@ -1,6 +1,5 @@
 <script>
 	import dayjs from 'dayjs';
-	import '@fontsource/montserrat/900.css';
 
 	import ArticleNavigation from '../../../components/ArticleNavigation.svelte';
 
