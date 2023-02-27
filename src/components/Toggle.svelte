@@ -16,8 +16,16 @@
 	const onClick = () => {
 		checked = !checked;
 		onToggle();
-		if (checked) return checkbox.click();
-		if (!checked) return checkbox.click();
+		if (checked) {
+			checkbox.click();
+			checkbox.focus();
+			return;
+		}
+		if (!checked) {
+			checkbox.click();
+			checkbox.focus();
+			return;
+		}
 	};
 
 	const onInputClick = (e) => {
