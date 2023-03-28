@@ -19,7 +19,7 @@
 			<br />
 			<br />
 			Made using the{' '}
-			<a href="https://nextjs.org/" target="_blank" rel="noreferrer"> Next JS framework </a>
+			<a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer"> SvelteKit framework </a>
 		</p>
 	</div>
 </aside>
